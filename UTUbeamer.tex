@@ -1,0 +1,234 @@
+% Originally by Riku Klén (2013)
+% Modified by Kaisa Joki (2019)
+% Modified by Teemu Daniel Laajala (2023)
+% Beamer slide template based on Warsaw theme for use in UTU, particularly Department of Mathematics and Statistics
+
+\documentclass{beamer} 
+
+\mode<presentation>
+
+\usepackage{amssymb,amsthm,amsmath} % ams
+\usepackage[T1]{fontenc} % Font coding
+\usepackage[utf8]{inputenc} % For Scandinavian letters etc
+\usefonttheme{professionalfonts}
+
+\usepackage{booktabs}
+\usepackage[english]{babel} % Language
+\usepackage{pstricks} % Required For command \newrgbcolor
+\usepackage{xcolor} % Required for command \colorbox
+
+\usetheme{Warsaw} % Beamer-style: Warsaw
+\useoutertheme[subsection=false]{smoothbars}
+
+\usepackage{multirow}
+\usepackage{colortbl}
+\usepackage{hhline}
+
+\usefonttheme{professionalfonts}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+
+\setlength{\arrayrulewidth}{0.5pt}
+
+\definecolor{plum(traditional)}{rgb}{0.56, 0.27, 0.52}
+\definecolor{pansypurple}{rgb}{0.47, 0.09, 0.29}
+\definecolor{palatinatepurple}{rgb}{0.41, 0.16, 0.38}
+\definecolor{darkraspberry}{rgb}{0.53, 0.15, 0.34}
+\definecolor{spring green}{rgb}{0.000000,1.000000,0.498039}
+\definecolor{mypink1}{rgb}{0.858, 0.188, 0.478}
+
+\newrgbcolor{turku}{0.44 0.16 0.39} % University of Turku color
+\setbeamertemplate{blocks}[rounded][shadow=true] % Style settings
+\setbeamercolor{structure}{fg=palatinatepurple!70!black} % Style settings
+\setbeamercolor{block title}{bg=palatinatepurple!85!black} % Style settings
+
+
+
+\setbeamertemplate{theorems}[numbered] % Number theorems
+
+\pgfdeclareimage[width=128mm]{logo}{UTUhorizontal2012.png} % Define picture as a horizontal bar and logo
+\logo{\vspace{-4mm}\pgfuseimage{logo}\hspace{-1mm}} % UTU logo, requires the image file "UTUhorizontal2012.png" (or similar)
+
+\title[Title visible on the lower-right corner] % Short header, visible on a lower corner
+{ Full title \\ on multiple \\ lines} % Title to the first page
+
+\author[\insertframenumber / \inserttotalframenumber \hspace{4cm} John Doe et al.] % Short author(s) on bottom
+{ John Doe }% Authors on the first slide
+
+%\%institute[] % Instituutin lyhenne
+%{$^1$University of Turku \\ $^2$ and maybe some other place as well} % Instituutti
+
+\date[] % Short for date
+{Date and \\ place \vspace{-0.25cm}} % Date on the first slide
+
+
+
+
+
+% Some example environments used by KJ
+\theoremstyle{plain}
+%\newtheorem{Theo}[Def]{THEOREM}
+\newtheorem{lause}[equation]{Lause}
+\theoremstyle{definition}
+\newtheorem*{esimerkki}{Esimerkki}
+
+\setbeamercolor{firb}{fg=black,bg=white!80!palatinatepurple}
+\newenvironment{flatbox}[1]{\begin{beamercolorbox}[sep=1em,wd=1.0\textwidth]{#1}}{\end{beamercolorbox}}
+
+\theoremstyle{definition}
+\newtheorem{Alg}{ALGORITHM}[section]
+
+% Custom commands from KJ
+\newcommand{\x}{{\boldsymbol x}}           % Bold-face for vector x
+\newcommand{\y}{{\boldsymbol y}}           % Bold-face for vector y
+
+\newcommand{\bxi}{{\boldsymbol \xi}}           % vektori \xi lihavoitu
+\newcommand{\bd}{{\boldsymbol d}}           % vektori d lihavoitu
+\newcommand{\bv}{{\boldsymbol v}}           % vektori v lihavoitu
+\newcommand{\be}{{\boldsymbol e}}           % vektori e lihavoitu
+\newcommand{\ba}{{\boldsymbol a}}           % vektori e lihavoitu
+\newcommand{\bu}{{\boldsymbol u}}           % vektori e lihavoitu
+\newcommand{\err}{e}                        % error function
+
+\newcommand{\bzero}{{\boldsymbol 0}}           % vektori 0 lihavoitu
+\newcommand{\bM}{{\boldsymbol M}}           % matriisi M lihavoitu
+\usepackage{setspace}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\B}{\mathbb{B}}
+\newcommand{\Bn}{{\mathbb{B}^n}}
+\newcommand{\Rn}{{\R^n}}
+\newcommand{\comment}[1]{}
+\DeclareMathOperator{\st}{s.t.}             % In optimization abbreviation for "subject to"
+
+
+\begin{document}
+
+\setbeamertemplate{navigation symbols}{} % Remove navigation symbols
+
+\begin{frame}
+  \titlepage
+  
+ { \begin{spacing}{0.5}
+\begin{tiny}
+  This work was financially supported by the Foo and Bar organizations 
+  \end{tiny}\end{spacing} } % Funding statement
+  
+\end{frame}
+
+\begin{frame}
+   \frametitle{Outline}
+   \tableofcontents
+\end{frame}
+
+\section{Introduction and Motivation}
+\subsection{Step one}
+
+\begin{frame}{The very first real slide}	
+\begin{small}
+
+\begin{itemize}
+\item First thing
+\item Second thing
+\item Third thing
+{\LARGE 
+\begin{itemize}
+\item Third sub-thing one
+\item Third sub-thing two
+\end{itemize}}
+
+\end{itemize}\vspace{.15cm}
+
+\end{small}
+\end{frame}
+
+\subsection{Step two}
+
+\begin{frame}{The second slide}
+\begin{small}
+
+
+\begin{block}{A nice little block}\vspace{-0.3cm}
+	\begin{align*}
+		\begin{cases}
+		\text{minimize}\quad\, & f(\x) \\
+		\text{subject to} & \x \in \R^n
+		\end{cases}
+	\end{align*}
+\end{block}
+
+\begin{itemize}
+
+\item Insight into the equation
+
+\item Deeper insight
+\begin{itemize}
+  \item Open up insight
+  \item Open insight even more
+\end{itemize} \vspace{0.3cm}
+
+\item[$\Rightarrow$] {\bf \color{palatinatepurple!80!black} Heureka!}
+
+\end{itemize}
+
+\end{small}
+\end{frame}
+
+\section{Methodology}
+\subsection{What are we using}
+
+\begin{frame}{Thing we use first}	
+\begin{small}
+
+
+\begin{itemize}
+\item {\bf \em \color{palatinatepurple!80!black} A function} $f:\R \rightarrow\R$ is assumed to
+	\begin{itemize}
+	  \item[--] Assumption 1
+	  \item[--] Assumption 2
+	  \item[--] Assumption 3
+	\end{itemize}	
+\item And so forth
+\item And even further
+\end{itemize}
+
+\end{small}
+\end{frame}
+
+
+\begin{frame}{Also used}	
+\begin{small}
+
+\begin{block}{I am also a block}
+	... and here I have my important stuff.
+\end{block}
+
+\begin{block}{}
+	Followed by a block without a title.
+\end{block}
+
+\vspace{1cm}
+Followed by free text after some padding.
+
+\end{small}
+\end{frame}
+
+
+\section{End}
+
+\begin{frame}{\text{ }}
+
+
+\begin{center}
+\begin{LARGE}
+\textbf{Thank you for your attention!}
+\end{LARGE}
+\end{center}
+
+\end{frame}
+
+
+\end{document}
+
+
